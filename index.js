@@ -51,24 +51,5 @@ function launchTest (opt, cb) {
 }
 
 function filterBrowsers (browsers, remoteCfg, cb) {
-    var grid = require('selenium-grid-status');
-
-    grid.available(remoteCfg, function(err, availableBrowsers) {
-        if (err !== null) {
-            return cb(new Error('Could not connect to selenium grid, did you started it?'));
-        }
-
-        var foundBrowsers = browsers.filter(function(desired) {
-            return availableBrowsers.some(function(available) {
-                return available.browserName === desired.browserName &&
-                    available.version === desired.version;
-            });
-        });
-
-        if (foundBrowsers.length === 0) {
-            return cb(new Error('No browsers found in the grid, did you started your VMs?'))
-        }
-
-        cb(null, foundBrowsers);
-    });
+        cb(null, browsers);
 }

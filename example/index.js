@@ -1,13 +1,10 @@
 var seleniumRunner = require('../');
 
-console.log('You should get 4 test callbacks and one end callback');
+console.log('You should get 2 test callbacks and one end callback');
 
 // tests to run
 var tests = [{
   url: 'http://www.google.com',
-  exec: require('./check-title.js')
-}, {
-  url: 'http://www.yahoo.com',
   exec: require('./check-title.js')
 }];
 

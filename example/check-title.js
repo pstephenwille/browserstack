@@ -1,11 +1,14 @@
-module.exports = function checkTitle(browser, cb) {
-  browser.title(function(err, title) {
-    if (err !== null) cb(err);
-
-    if (title === 'Google') {
-      cb(null);
-    } else {
-      cb(new Error('UH OH Title is not ok! Are you on google.com?'));
-    }
-  });
+module.exports = function helloBrowserStack(browser, cb) {
+    browser.title(function(err, title) {
+        console.log("Title for the page: "+title)
+        browser.elementByName('q', function(err, el) {
+            el.sendKeys("BrowserStack", function() {
+                browser.elementByName("btnG", function(err,el) {
+                    el.click(function() {
+                        browser.quit()
+                    })
+                })
+            })
+        })
+    })
 }
