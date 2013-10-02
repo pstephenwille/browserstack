@@ -9,8 +9,14 @@ is ready.
 
 ```bash
 npm install
+```
+
+Make sure to edit the config.json with your BrowserStack username and access key.
+
+```bash
 node example
 ```
+
 
 ## Writing tests
 
@@ -38,8 +44,7 @@ module.exports = function checkTitle(browser, cb) {
 ```
 ### Some configuration
 
-* remoteCfg: Where is the [selenium grid](http://code.google.com/p/selenium/wiki/Grid2), you can
-also use [saucelabs](https://saucelabs.com/)
+* remoteCfg: Where is the [selenium grid](http://code.google.com/p/selenium/wiki/Grid2), you can also use [BrowserStack](https://www.browserstack.com/)
 * browsers: On which browsers to launch every test
 * concurrency: How many tests a browser can launch in parallel
 
@@ -47,15 +52,19 @@ config.json
 ```json
 {
   "remoteCfg": {
-    "host": "127.0.0.1",
-    "port": 4444
+    "host": "hub.browserstack.com",
+    "port": 80
   },
   "browsers": [{
-    "browserName": "internet explorer",
-    "version": "9"
+      "browserName": "internet explorer",
+      "version": "10.0",
+      "browserstack.user": "<browserstack.user>",
+      "browserstack.key": "<browserstack.key>"
   }, {
-    "browserName": "chrome",
-    "version": "latest"
+      "browserName": "chrome",
+      "version": "22.0",
+      "browserstack.user": "<browserstack.user>",
+      "browserstack.key": "<browserstack.key>"
   }],
   "concurrency": 2
 }
