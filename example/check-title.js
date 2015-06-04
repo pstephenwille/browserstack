@@ -23,5 +23,7 @@ module.exports = function helloBrowserStack(browser, next) {
                 })
             })
         })
-    })
+    });
+
+
 }

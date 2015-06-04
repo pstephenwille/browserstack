@@ -4,7 +4,7 @@ console.log('You should get 2 test callbacks and one end callback');
 
 // tests to run
 var tests = [{
-  url: 'http://www.google.com',
+  url: 'http://arstechnica.com/',
   exec: require('./check-title.js')
 }];
 

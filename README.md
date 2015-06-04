@@ -126,3 +126,20 @@ A test finished { '0': [Error: UH OH Title is not ok! Are you on google.com?],
      browser: { browserName: 'internet explorer', version: '9' } } }
 All tests ended { '0': null }
 ```
+
+
+
+# protractor webdriver install
+
+`npm install -g protractor`
+
+`sudo webdriver-manager update`
+
+`sudo webdriver-manager start`
+
+
+
+
+
+
+
