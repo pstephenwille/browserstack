@@ -5,7 +5,7 @@ console.log('You should get 2 test callbacks and one end callback');
 // tests to run
 var tests = [{
   url: 'http://arstechnica.com/',
-  exec: require('./check-title.js')
+  exec: require('./ars.login.test.js')
 }];
 
 var config = require('./config.json');
